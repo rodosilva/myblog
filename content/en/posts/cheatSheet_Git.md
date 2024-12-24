@@ -1,4 +1,7 @@
-# Git Curso Profesional
++++
+date = '2024-12-24T22:11:36-00:00'
+title = 'Git Curso Profesional'
++++
 
 ## Comandos
 
