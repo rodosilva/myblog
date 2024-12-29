@@ -1,7 +1,7 @@
 ---
-title: Profile
+title: Portfolio
 description: 'Mi Portafolio'
 author: Rodrigo Silva
 ---
 
-Este es mi **Perfil**
+Este es mi **Portafolio**
