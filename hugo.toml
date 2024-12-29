@@ -56,9 +56,9 @@ url = "https://www.linkedin.com/in/rodrigo-silva-alegria-4a002962/"
     url = '/about/'
     weight = 30
   [[Languages.en-gb.menu.main]]
-    pageRef="profile"
-    name = 'Profile'
-    url = '/profile/'
+    pageRef="portfolio"
+    name = 'Portfolio'
+    url = '/portfolio/'
     weight = 30
 
 [Languages.en-gb.params]
