@@ -1,6 +1,5 @@
 +++
 date = '2025-01-16T14:09:17-05:00'
-draft = true
 title = 'BootCampDevOps Avatares'
 +++
 
