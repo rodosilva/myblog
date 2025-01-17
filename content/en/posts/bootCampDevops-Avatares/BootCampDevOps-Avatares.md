@@ -80,7 +80,7 @@ Tan solo necesitamos ir a la URL:
 
 [Avatares](http://localhost:5173)
 
-![Avatares_Contenedores](../../../assets/Avatares_Contenedores.jpg)
+![Avatares_Contenedores](Avatares_Contenedores.jpg)
 > **_Imagen 1_**:
 > Aplicación `Avatares` corriendo de forma local. En la parte superior se logra ver 2 contenedores (backend y frontend) corriendo.
 
