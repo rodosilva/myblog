@@ -83,8 +83,3 @@ Tan solo necesitamos ir a la URL:
 ![Avatares_Contenedores](Avatares_Contenedores.jpg)
 > **_Imagen 1_**:
 > Aplicación `Avatares` corriendo de forma local. En la parte superior se logra ver 2 contenedores (backend y frontend) corriendo.
-
-
-
-
-
