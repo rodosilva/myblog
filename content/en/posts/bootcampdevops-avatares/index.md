@@ -88,7 +88,7 @@ El cual puede encontrarse en `.github/workflows/pushDockerHub.yaml`
 
 Dicho `Github actions` seguirá una serie de pasos apenas se realice un `push a main`
 
-####Pasos
+#### Pasos
 ##### 2.1 Push a main
 Luego de realizar los commits que se vean convenientes, podremos ejecutar:
 ```bash
@@ -105,4 +105,25 @@ Automáticamente empezarán a correr los `steps` en donde encontramos:
 ![dockerHub](dockerHub.PNG)
 > **_Imagen 3_**: Podemos ver las imágenes ya subidas al Docker Hub
 
+### 3. Terraform: Infraestructura como código en AWS
+En esta fase se construirá la infraestructura en AWS base para poder albergar nuestras imágenes y poder apreciar la aplicación `Avatares`
+
+Nos ubicaremos en el directorio `./terraform-EKS/`
+
+#### Descripción de Archivos
+- `provider.tf`: En este archivo encontraremos los `locals` o variables que necesitaremos durante el proceso, como también el proveedor y región que en este caso será `AWS us-east-1`
+
+- `vpc.tf`: Archivo encargado de dar las instrucciones para la construcción de la red o `VPC` que albergará y promoverá la comunicación entre los servicios.
+
+- `eks.tf`: Archivo encargado de la construcción del cluster de `EKS` que viene a ser un `Kubernetes` desde `AWS`
+
+#### Requisitos
+- **Terraform**: 
+
+#### Pasos
+##### 3.1 Inicializando Terraform
+##### 3.2 Planificando los cambios en la infraestructura
+##### 3.3 Aplicando los cambios en la infraestructura
+
+### 4. Kubernetes Deployments: Despliegue de la aplicación
 
