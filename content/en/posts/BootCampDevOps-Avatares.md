@@ -18,8 +18,8 @@ el entorno laboral
 - **Integrante**: Rodrigo Silva Alegría
 - **Repositorio**: https://github.com/rodosilva/bootCampDevOps-ProyectoFinal-Avatares
 - **Video Presentación**: 
-> [!NOTE]
-> Este proyecto utiliza como base la aplicación de `Rossana Suarez` la cual podremos encontrar en [gitlab](https://gitlab.com/training-devops-cf/avatares-devops)
+> **_NOTA_**
+> *Este proyecto utiliza como base la aplicación de `Rossana Suarez` la cual podremos encontrar en [gitlab](https://gitlab.com/training-devops-cf/avatares-devops)*
 
 ## Descripción
 Este proyecto podría definirse en 4 fases.
@@ -80,6 +80,9 @@ Tan solo necesitamos ir a la URL:
 
 [Avatares](http://localhost:5173)
 
+![Avatares_Contenedores](../../../assets/Avatares_Contenedores.jpg)
+> **_Imagen 1_**:
+> Aplicación `Avatares` corriendo de forma local. En la parte superior se logra ver 2 contenedores (backend y frontend) corriendo.
 
 
 
