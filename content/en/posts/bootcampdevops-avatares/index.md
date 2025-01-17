@@ -1,11 +1,9 @@
 +++
 date = '2025-01-16T14:09:17-05:00'
-title = 'BootCampDevOps Avatares'
+title = 'Código Facilito | BootCamp DevOps | Proyecto Final | Avatares'
 +++
 
-# Código Facilito | BootCamp DevOps | Proyecto Final | Avatares
-
-## Objectivos
+## Objetivos
 - Aplicar los conocimientos adquiridos durante el
 Bootcamp
 - Iniciar o adicionar el proyecto a nuestro portafolio
