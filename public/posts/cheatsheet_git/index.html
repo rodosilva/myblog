@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">CheatSheet_Git | My New Hugo Site</title>
+<meta property="og:title" content="CheatSheet_Git | My New Hugo Site" />
+<meta name="twitter:title" content="CheatSheet_Git | My New Hugo Site" />
+<meta itemprop="name" content="CheatSheet_Git | My New Hugo Site" />
+<meta name="application-name" content="CheatSheet_Git | My New Hugo Site" />
+<meta property="og:site_name" content="Rodrigo Silva" />
+
+<meta name="description" content="My Personal Web Page">
+<meta itemprop="description" content="My Personal Web Page" />
+<meta property="og:description" content="My Personal Web Page" />
+<meta name="twitter:description" content="My Personal Web Page" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="http://localhost:1313/posts/cheatsheet_git/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-12-24T11:53:30-0500 />
+    <meta property="article:published_time" content=2024-12-24T11:53:30-0500 />
+    <meta property="og:url" content="http://localhost:1313/posts/cheatsheet_git/" />
+
+    
+    <meta property="og:article:author" content="Sidharth R" />
+    <meta property="article:author" content="Sidharth R" />
+    <meta name="author" content="Sidharth R" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "CheatSheet_Git",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-12-24",
+        "description": "",
+        "wordCount":  762 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-12-24",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "My New Hugo Site"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.141.0">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/cheatsheet_git/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="CheatSheet_Git">
+  <meta property="og:description" content="Comandos Instalar sudo apt install git-all LLaves eval &#34;$(ssh-agent -s)&#34; → Inicializar nuestras llaves ssh -T git@github.com → Verificar que Git ya tiene nuestra llave ssh-add ~/.ssh/id_ed25519 → Añadir ssh-keygen -t ed25519 -C &#34;rodosilva.alpha@gmail.com&#34; → Crear llaves nuevas. Passphrase es una capa extra Comandos Git git --version git add -A → Agrega todos los archivos con cambios en el proyecto git add -u → Todos los archivos modificados o eliminados git add [file | .] → Pasa área de trabajo al área de Staging git branch → Ver las ramas git branch -D [develop] → Borrar rama git branch -M main → Cambiar el nombre de la rama (forzar) git checkout . → Descartar cambios del área de trabajo git checkout [--ours | --theirs] [file en conflicto] → Ours cuando queremos que se conserve que hay en la rama padre, y theirs, la rama hija git checkout [file name] → Quita los cambios del área de trabajo ejecutadas en ese archivo y lo retorna al último Stage de ese mismo archivo git cherry-pick [hash commit] → Toma commits y los coloca en mi rama añadiendolo como un nuevo commit. git clone [URL] → Clonar un remoto hacia tu local git commit --amend → Permite editar el mensaje del último commit. Tambien añade los cambios que están en tu área de staging (Lo que añadiste con el git add [file]) git commit -m &#34;Mensaje&#34; → De área de Staging al área del historial de repositorio git config --global user.email &#34;rodosilva.alpha@gmail.com&#34; → in el global si quieres usar credenciales en repositorio específico git config --global user.email &#34;rodosilva.alpha@gmail.com&#34; git config --global user.name &#34;Rodrigo Silva&#34; git config --list → Ver configuración git config color.status.added [blue] → Darle color a los añadidos git config color.status.branch [magenta] → Darle color a la palabra de la rama git config color.status.untracked &#34;141 bold&#34; → Color al untracked en negritas git config user.name → Ver configuración solo de User git config user.name &#34;Rodrigo Silva&#34; → Sin el global si quieres usar credenciales en repositorio específico git diff → Diferencias entre nuestra área de trabajo y área de repositorio. Desde el punto de vista del área de trabajo git init → Carpeta en la que estamos será un repositorio git log → Ver el historial junto con la información git log --format=[short|medium|full] → Cantidad de info en los logs git log --oneline → Log en versión resumida git log -n [2] → Ver los últimos [2] commits git merge --squash [nueva rama] → Squash merge git merge [rama Nuevo-Feature] → Desde la rama main (la que queremos que reciba los cambios) git pull → Jalar del remoto al local git push -u origin main → Push al repo remoto -u asocial rama main local con rama main remota. Entonces, la próxima vez no es necesario especificar [origin main] git rebase --interactive → Permite interactuar con el proceso de rebase. Limpieza de tu historia git rebase main → Desde una rama secundaria, actualiza y añade los commits de la rama main a nuestra rama secundaria git remote add origin [URL] → Añadir la url del Github y tu repo git reset → Devuelve cambios en archivos a la zona de trabajo git reset --hard [HEAD~1 commit ID] → Elimina y son no recuperables git reset --mixed [HEAD~1 commit ID] → Es la de default. Deshace el commit, mantiene los cambios en el área de trabajo git reset --soft [HEAD~1 commit ID] → Deshace el commit, mantiene los cambios en el stage git restore --staged → Quitar de stage git revert [hash del commit] → Nuevo commit que revierta los cambios de un commit en específico git rm -r --cached . → Remueve del Index. lo mencionado en gitignore. Suele usarse para ignorar lo que ya estaba indexado en el pasado git show [id commit] → Ver información detallada del último Commit (Log &#43; DIff) git stash → Manda los cambios del área de trabajo al área de Stash git stash --include-untracked → Stash incluyendo lo que no ha sido agregado al trackeo git stash --list → Listar stash git stash pop → Retoma el último de la pila al área de trabajo git stash pop stash@{1} → Retoma desde stash de una posición específica git stash save [&#34;Nombre&#34;] → Mandar a Stash con nombre git status → Revisar el estado git status -s →Información de las ramas y de las áreas en versión reducida git switch -c [nombreDeLaRama] → Crear nueva rama git switch [rama] → Navegar entre ramas Extras basename -s .git &#34;$(git config --get remote.origin.url)&#34; -&gt; Ver el nombre del repo">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-24T11:53:30-05:00">
+    <meta property="article:modified_time" content="2024-12-24T11:53:30-05:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CheatSheet_Git">
+  <meta name="twitter:description" content="Comandos Instalar sudo apt install git-all LLaves eval &#34;$(ssh-agent -s)&#34; → Inicializar nuestras llaves ssh -T git@github.com → Verificar que Git ya tiene nuestra llave ssh-add ~/.ssh/id_ed25519 → Añadir ssh-keygen -t ed25519 -C &#34;rodosilva.alpha@gmail.com&#34; → Crear llaves nuevas. Passphrase es una capa extra Comandos Git git --version git add -A → Agrega todos los archivos con cambios en el proyecto git add -u → Todos los archivos modificados o eliminados git add [file | .] → Pasa área de trabajo al área de Staging git branch → Ver las ramas git branch -D [develop] → Borrar rama git branch -M main → Cambiar el nombre de la rama (forzar) git checkout . → Descartar cambios del área de trabajo git checkout [--ours | --theirs] [file en conflicto] → Ours cuando queremos que se conserve que hay en la rama padre, y theirs, la rama hija git checkout [file name] → Quita los cambios del área de trabajo ejecutadas en ese archivo y lo retorna al último Stage de ese mismo archivo git cherry-pick [hash commit] → Toma commits y los coloca en mi rama añadiendolo como un nuevo commit. git clone [URL] → Clonar un remoto hacia tu local git commit --amend → Permite editar el mensaje del último commit. Tambien añade los cambios que están en tu área de staging (Lo que añadiste con el git add [file]) git commit -m &#34;Mensaje&#34; → De área de Staging al área del historial de repositorio git config --global user.email &#34;rodosilva.alpha@gmail.com&#34; → in el global si quieres usar credenciales en repositorio específico git config --global user.email &#34;rodosilva.alpha@gmail.com&#34; git config --global user.name &#34;Rodrigo Silva&#34; git config --list → Ver configuración git config color.status.added [blue] → Darle color a los añadidos git config color.status.branch [magenta] → Darle color a la palabra de la rama git config color.status.untracked &#34;141 bold&#34; → Color al untracked en negritas git config user.name → Ver configuración solo de User git config user.name &#34;Rodrigo Silva&#34; → Sin el global si quieres usar credenciales en repositorio específico git diff → Diferencias entre nuestra área de trabajo y área de repositorio. Desde el punto de vista del área de trabajo git init → Carpeta en la que estamos será un repositorio git log → Ver el historial junto con la información git log --format=[short|medium|full] → Cantidad de info en los logs git log --oneline → Log en versión resumida git log -n [2] → Ver los últimos [2] commits git merge --squash [nueva rama] → Squash merge git merge [rama Nuevo-Feature] → Desde la rama main (la que queremos que reciba los cambios) git pull → Jalar del remoto al local git push -u origin main → Push al repo remoto -u asocial rama main local con rama main remota. Entonces, la próxima vez no es necesario especificar [origin main] git rebase --interactive → Permite interactuar con el proceso de rebase. Limpieza de tu historia git rebase main → Desde una rama secundaria, actualiza y añade los commits de la rama main a nuestra rama secundaria git remote add origin [URL] → Añadir la url del Github y tu repo git reset → Devuelve cambios en archivos a la zona de trabajo git reset --hard [HEAD~1 commit ID] → Elimina y son no recuperables git reset --mixed [HEAD~1 commit ID] → Es la de default. Deshace el commit, mantiene los cambios en el área de trabajo git reset --soft [HEAD~1 commit ID] → Deshace el commit, mantiene los cambios en el stage git restore --staged → Quitar de stage git revert [hash del commit] → Nuevo commit que revierta los cambios de un commit en específico git rm -r --cached . → Remueve del Index. lo mencionado en gitignore. Suele usarse para ignorar lo que ya estaba indexado en el pasado git show [id commit] → Ver información detallada del último Commit (Log &#43; DIff) git stash → Manda los cambios del área de trabajo al área de Stash git stash --include-untracked → Stash incluyendo lo que no ha sido agregado al trackeo git stash --list → Listar stash git stash pop → Retoma el último de la pila al área de trabajo git stash pop stash@{1} → Retoma desde stash de una posición específica git stash save [&#34;Nombre&#34;] → Mandar a Stash con nombre git status → Revisar el estado git status -s →Información de las ramas y de las áreas en versión reducida git switch -c [nombreDeLaRama] → Crear nueva rama git switch [rama] → Navegar entre ramas Extras basename -s .git &#34;$(git config --get remote.origin.url)&#34; -&gt; Ver el nombre del repo">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/cheatsheet_git/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/portfolio/">
+                        Portfolio
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">CheatSheet_Git</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-12-24T11:53:30-05:00" itemprop="datePublished"> 24 Dec 2024 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#comandos">Comandos</a>
+      <ul>
+        <li><a href="#instalar">Instalar</a></li>
+        <li><a href="#llaves">LLaves</a></li>
+        <li><a href="#comandos-git">Comandos Git</a></li>
+        <li><a href="#extras">Extras</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="comandos">Comandos</h2>
+<h3 id="instalar">Instalar</h3>
+<ul>
+<li><code>sudo apt install git-all</code></li>
+</ul>
+<h3 id="llaves">LLaves</h3>
+<ul>
+<li><code>eval &quot;$(ssh-agent -s)&quot;</code> → Inicializar nuestras llaves</li>
+<li><code>ssh -T git@github.com</code> → Verificar que Git ya tiene nuestra llave</li>
+<li><code>ssh-add ~/.ssh/id_ed25519</code> → Añadir</li>
+<li><code>ssh-keygen -t ed25519 -C &quot;rodosilva.alpha@gmail.com&quot;</code> → Crear llaves nuevas. Passphrase es una capa extra</li>
+</ul>
+<h3 id="comandos-git">Comandos Git</h3>
+<ul>
+<li><code>git --version</code></li>
+<li><code>git add -A</code> → Agrega todos los archivos con cambios en el proyecto</li>
+<li><code>git add -u</code> → Todos los archivos modificados o eliminados</li>
+<li><code>git add [file | .]</code> → Pasa área de trabajo al área de Staging</li>
+<li><code>git branch</code> → Ver las ramas</li>
+<li><code>git branch -D [develop]</code> → Borrar rama</li>
+<li><code>git branch -M main</code> → Cambiar el nombre de la rama (forzar)</li>
+<li><code>git checkout .</code> → Descartar cambios del área de trabajo</li>
+<li><code>git checkout [--ours | --theirs] [file en conflicto]</code> → Ours cuando queremos que se conserve que hay en la rama padre, y theirs, la rama hija</li>
+<li><code>git checkout [file name]</code> → Quita los cambios del área de trabajo ejecutadas en ese archivo y lo retorna al último Stage de ese mismo archivo</li>
+<li><code>git cherry-pick [hash commit]</code> → Toma commits y los coloca en mi rama añadiendolo como un nuevo commit.</li>
+<li><code>git clone [URL]</code> → Clonar un remoto hacia tu local</li>
+<li><code>git commit --amend</code> → Permite editar el mensaje del último commit. Tambien añade los cambios que están en tu área de staging (Lo que añadiste con el git add [file])</li>
+<li><code>git commit -m &quot;Mensaje&quot;</code> → De área de Staging al área del historial de repositorio</li>
+<li><code>git config --global user.email &quot;rodosilva.alpha@gmail.com&quot;</code> → in el global si quieres usar credenciales en repositorio específico</li>
+<li><code>git config --global user.email &quot;rodosilva.alpha@gmail.com&quot;</code></li>
+<li><code>git config --global user.name &quot;Rodrigo Silva&quot;</code></li>
+<li><code>git config --list</code> → Ver configuración</li>
+<li><code>git config color.status.added [blue]</code> → Darle color a los añadidos</li>
+<li><code>git config color.status.branch [magenta]</code> → Darle color a la palabra de la rama</li>
+<li><code>git config color.status.untracked &quot;141 bold&quot;</code> → Color al untracked en negritas</li>
+<li><code>git config user.name</code> → Ver configuración solo de User</li>
+<li><code>git config user.name &quot;Rodrigo Silva&quot;</code> → Sin el global si quieres usar credenciales en repositorio específico</li>
+<li><code>git diff</code> → Diferencias entre nuestra área de trabajo y área de repositorio. Desde el punto de vista del área de trabajo</li>
+<li><code>git init</code> → Carpeta en la que estamos será un repositorio</li>
+<li><code>git log</code> → Ver el historial junto con la información</li>
+<li><code>git log --format=[short|medium|full]</code> → Cantidad de info en los logs</li>
+<li><code>git log --oneline</code> → Log en versión resumida</li>
+<li><code>git log -n [2]</code> → Ver los últimos [2] commits</li>
+<li><code>git merge --squash [nueva rama]</code> → Squash merge</li>
+<li><code>git merge [rama Nuevo-Feature]</code> → Desde la rama main (la que queremos que reciba los cambios)</li>
+<li><code>git pull</code> → Jalar del remoto al local</li>
+<li><code>git push -u origin main</code> → Push al repo remoto -u asocial rama main local con rama main remota. Entonces, la próxima vez no es necesario especificar [origin main]</li>
+<li><code>git rebase --interactive</code> → Permite interactuar con el proceso de rebase. Limpieza de tu historia</li>
+<li><code>git rebase main</code> → Desde una rama secundaria, actualiza y añade los commits de la rama main a nuestra rama secundaria</li>
+<li><code>git remote add origin [URL]</code> → Añadir la url del Github y tu repo</li>
+<li><code>git reset</code> → Devuelve cambios en archivos a la zona de trabajo</li>
+<li><code>git reset --hard [HEAD~1 commit ID]</code> → Elimina y son no recuperables</li>
+<li><code>git reset --mixed [HEAD~1 commit ID]</code> → Es la de default. Deshace el commit, mantiene los cambios en el área de trabajo</li>
+<li><code>git reset --soft [HEAD~1 commit ID]</code> → Deshace el commit, mantiene los cambios en el stage</li>
+<li><code>git restore --staged</code> → Quitar de stage</li>
+<li><code>git revert [hash del commit]</code> → Nuevo commit que revierta los cambios de un commit en específico</li>
+<li><code>git rm -r --cached .</code> → Remueve del Index. lo mencionado en gitignore. Suele usarse para ignorar lo que ya estaba indexado en el pasado</li>
+<li><code>git show [id commit]</code> → Ver información detallada del último Commit (Log + DIff)</li>
+<li><code>git stash</code> → Manda los cambios del área de trabajo al área de Stash</li>
+<li><code>git stash --include-untracked</code> → Stash incluyendo lo que no ha sido agregado al trackeo</li>
+<li><code>git stash --list</code> → Listar stash</li>
+<li><code>git stash pop</code> → Retoma el último de la pila al área de trabajo</li>
+<li><code>git stash pop stash@{1}</code> → Retoma desde stash de una posición específica</li>
+<li><code>git stash save [&quot;Nombre&quot;]</code> → Mandar a Stash con nombre</li>
+<li><code>git status</code> → Revisar el estado</li>
+<li><code>git status -s</code> →Información de las ramas y de las áreas en versión reducida</li>
+<li><code>git switch -c [nombreDeLaRama]</code> → Crear nueva rama</li>
+<li><code>git switch [rama]</code> → Navegar entre ramas</li>
+</ul>
+<h3 id="extras">Extras</h3>
+<ul>
+<li><code>basename -s .git &quot;$(git config --get remote.origin.url)&quot;</code> -&gt; Ver el nombre del repo</li>
+</ul>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/rodosilva" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/rodrigo-silva-alegria-4a002962/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Sidharth R.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

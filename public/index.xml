@@ -6,7 +6,120 @@
     <description>Recent content in Home on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 15 Dec 2024 22:11:59 -0500</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2025 14:09:17 -0500</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BootCampDevOps Avatares</title>
+      <link>http://localhost:1313/posts/bootcampdevops-avatares/</link>
+      <pubDate>Thu, 16 Jan 2025 14:09:17 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/bootcampdevops-avatares/</guid>
+      
+      <description>&lt;h1 id=&#34;código-facilito--bootcamp-devops--proyecto-final--avatares&#34;&gt;Código Facilito | BootCamp DevOps | Proyecto Final | Avatares&lt;/h1&gt;
+&lt;h2 id=&#34;objectivos&#34;&gt;Objectivos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Aplicar los conocimientos adquiridos durante el
+Bootcamp&lt;/li&gt;
+&lt;li&gt;Iniciar o adicionar el proyecto a nuestro portafolio&lt;/li&gt;
+&lt;li&gt;Desarrollar un proyecto que reflejen situaciones reales, nos
+enfrentamos a desafíos auténticos, lo que nos prepara mejor para
+el entorno laboral&lt;/li&gt;
+&lt;li&gt;Podernos graduar del Bootcamp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;información-del-proyecto&#34;&gt;Información del Proyecto&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Integrante&lt;/strong&gt;: Rodrigo Silva Alegría&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Repositorio&lt;/strong&gt;: &lt;a href=&#34;https://github.com/rodosilva/bootCampDevOps-ProyectoFinal-Avatares&#34;&gt;https://github.com/rodosilva/bootCampDevOps-ProyectoFinal-Avatares&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Video Presentación&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTA&lt;/em&gt;&lt;/strong&gt;
+&lt;em&gt;Este proyecto utiliza como base la aplicación de &lt;code&gt;Rossana Suarez&lt;/code&gt; la cual podremos encontrar en &lt;a href=&#34;https://gitlab.com/training-devops-cf/avatares-devops&#34;&gt;gitlab&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>CheatSheet_Git</title>
+      <link>http://localhost:1313/posts/cheatsheet_git/</link>
+      <pubDate>Tue, 24 Dec 2024 11:53:30 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/cheatsheet_git/</guid>
+      
+      <description>&lt;h2 id=&#34;comandos&#34;&gt;Comandos&lt;/h2&gt;
+&lt;h3 id=&#34;instalar&#34;&gt;Instalar&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo apt install git-all&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;llaves&#34;&gt;LLaves&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;eval &amp;quot;$(ssh-agent -s)&amp;quot;&lt;/code&gt; → Inicializar nuestras llaves&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ssh -T git@github.com&lt;/code&gt; → Verificar que Git ya tiene nuestra llave&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ssh-add ~/.ssh/id_ed25519&lt;/code&gt; → Añadir&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ssh-keygen -t ed25519 -C &amp;quot;rodosilva.alpha@gmail.com&amp;quot;&lt;/code&gt; → Crear llaves nuevas. Passphrase es una capa extra&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;comandos-git&#34;&gt;Comandos Git&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git --version&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add -A&lt;/code&gt; → Agrega todos los archivos con cambios en el proyecto&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add -u&lt;/code&gt; → Todos los archivos modificados o eliminados&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add [file | .]&lt;/code&gt; → Pasa área de trabajo al área de Staging&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch&lt;/code&gt; → Ver las ramas&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch -D [develop]&lt;/code&gt; → Borrar rama&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch -M main&lt;/code&gt; → Cambiar el nombre de la rama (forzar)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout .&lt;/code&gt; → Descartar cambios del área de trabajo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout [--ours | --theirs] [file en conflicto]&lt;/code&gt; → Ours cuando queremos que se conserve que hay en la rama padre, y theirs, la rama hija&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout [file name]&lt;/code&gt; → Quita los cambios del área de trabajo ejecutadas en ese archivo y lo retorna al último Stage de ese mismo archivo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git cherry-pick [hash commit]&lt;/code&gt; → Toma commits y los coloca en mi rama añadiendolo como un nuevo commit.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clone [URL]&lt;/code&gt; → Clonar un remoto hacia tu local&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit --amend&lt;/code&gt; → Permite editar el mensaje del último commit. Tambien añade los cambios que están en tu área de staging (Lo que añadiste con el git add [file])&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit -m &amp;quot;Mensaje&amp;quot;&lt;/code&gt; → De área de Staging al área del historial de repositorio&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config --global user.email &amp;quot;rodosilva.alpha@gmail.com&amp;quot;&lt;/code&gt; → in el global si quieres usar credenciales en repositorio específico&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config --global user.email &amp;quot;rodosilva.alpha@gmail.com&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config --global user.name &amp;quot;Rodrigo Silva&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config --list&lt;/code&gt; → Ver configuración&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config color.status.added [blue]&lt;/code&gt; → Darle color a los añadidos&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config color.status.branch [magenta]&lt;/code&gt; → Darle color a la palabra de la rama&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config color.status.untracked &amp;quot;141 bold&amp;quot;&lt;/code&gt; → Color al untracked en negritas&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config user.name&lt;/code&gt; → Ver configuración solo de User&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config user.name &amp;quot;Rodrigo Silva&amp;quot;&lt;/code&gt; → Sin el global si quieres usar credenciales en repositorio específico&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git diff&lt;/code&gt; → Diferencias entre nuestra área de trabajo y área de repositorio. Desde el punto de vista del área de trabajo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git init&lt;/code&gt; → Carpeta en la que estamos será un repositorio&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git log&lt;/code&gt; → Ver el historial junto con la información&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git log --format=[short|medium|full]&lt;/code&gt; → Cantidad de info en los logs&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git log --oneline&lt;/code&gt; → Log en versión resumida&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git log -n [2]&lt;/code&gt; → Ver los últimos [2] commits&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git merge --squash [nueva rama]&lt;/code&gt; → Squash merge&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git merge [rama Nuevo-Feature]&lt;/code&gt; → Desde la rama main (la que queremos que reciba los cambios)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git pull&lt;/code&gt; → Jalar del remoto al local&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push -u origin main&lt;/code&gt; → Push al repo remoto -u asocial rama main local con rama main remota. Entonces, la próxima vez no es necesario especificar [origin main]&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git rebase --interactive&lt;/code&gt; → Permite interactuar con el proceso de rebase. Limpieza de tu historia&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git rebase main&lt;/code&gt; → Desde una rama secundaria, actualiza y añade los commits de la rama main a nuestra rama secundaria&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git remote add origin [URL]&lt;/code&gt; → Añadir la url del Github y tu repo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset&lt;/code&gt; → Devuelve cambios en archivos a la zona de trabajo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset --hard [HEAD~1 commit ID]&lt;/code&gt; → Elimina y son no recuperables&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset --mixed [HEAD~1 commit ID]&lt;/code&gt; → Es la de default. Deshace el commit, mantiene los cambios en el área de trabajo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset --soft [HEAD~1 commit ID]&lt;/code&gt; → Deshace el commit, mantiene los cambios en el stage&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git restore --staged&lt;/code&gt; → Quitar de stage&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git revert [hash del commit]&lt;/code&gt; → Nuevo commit que revierta los cambios de un commit en específico&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git rm -r --cached .&lt;/code&gt; → Remueve del Index. lo mencionado en gitignore. Suele usarse para ignorar lo que ya estaba indexado en el pasado&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git show [id commit]&lt;/code&gt; → Ver información detallada del último Commit (Log + DIff)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash&lt;/code&gt; → Manda los cambios del área de trabajo al área de Stash&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash --include-untracked&lt;/code&gt; → Stash incluyendo lo que no ha sido agregado al trackeo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash --list&lt;/code&gt; → Listar stash&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash pop&lt;/code&gt; → Retoma el último de la pila al área de trabajo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash pop stash@{1}&lt;/code&gt; → Retoma desde stash de una posición específica&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash save [&amp;quot;Nombre&amp;quot;]&lt;/code&gt; → Mandar a Stash con nombre&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git status&lt;/code&gt; → Revisar el estado&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git status -s&lt;/code&gt; →Información de las ramas y de las áreas en versión reducida&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git switch -c [nombreDeLaRama]&lt;/code&gt; → Crear nueva rama&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git switch [rama]&lt;/code&gt; → Navegar entre ramas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;extras&#34;&gt;Extras&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;basename -s .git &amp;quot;$(git config --get remote.origin.url)&amp;quot;&lt;/code&gt; -&amp;gt; Ver el nombre del repo&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Vagrant</title>
       <link>http://localhost:1313/posts/vagrant/</link>
@@ -29,18 +142,50 @@ Dada la velocidad cambiante de tecnología, necesitamos tener espacios de infrae
       
       <guid>http://localhost:1313/pages/about/</guid>
       
-      <description>&lt;p&gt;About&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;rodrigo-silva&#34;&gt;Rodrigo Silva&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.shields.io/badge/Teach_Lead-SysAdmin-Blue?style=flat&amp;amp;labelColor=blue&amp;amp;color=gray&#34; alt=&#34;Static Badge&#34;&gt; &lt;img src=&#34;https://img.shields.io/badge/Cloud_AWS-Architect_Associate-Blue?style=flat&amp;amp;labelColor=blue&amp;amp;color=gray&#34; alt=&#34;Static Badge&#34;&gt; &lt;img src=&#34;https://img.shields.io/badge/Linux-gray?style=flat&amp;amp;labelColor=gray&amp;amp;color=gray&#34; alt=&#34;Static Badge&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;about&#34;&gt;About&lt;/h2&gt;
+&lt;p&gt;Electronic engineer dedicated to the technology field for more than 10 years, more than 5 specifically on Linux and around 2 years engaging DevOps roles.
+I’ve held positions like Tech Leader SysAdmin, server manager (Linux and Windows). Certified in AWS Cloud, ITIL4 and more.
+Raised with great values like responsibility, commitment and continuous improvement. Always in line of great communication and teamwork.&lt;/p&gt;
+&lt;h2 id=&#34;personal-information&#34;&gt;Personal Information&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Country&lt;/td&gt;
+          &lt;td&gt;Peru&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Number&lt;/td&gt;
+          &lt;td&gt;+51 979787257&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mail&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;mailto:rodrigo.silva.alegria@gmail.com&#34;&gt;rodrigo.silva.alegria@gmail.com&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;LinkedIn&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.linkedin.com/in/rodrigo-silva-alegria-4a002962/&#34;&gt;Rodrigo Silva&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</description>
       
     </item>
     
     <item>
-      <title>Profile</title>
-      <link>http://localhost:1313/pages/profile/</link>
+      <title>Portfolio</title>
+      <link>http://localhost:1313/pages/portfolio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/pages/profile/</guid>
+      <guid>http://localhost:1313/pages/portfolio/</guid>
       
-      <description>&lt;p&gt;Este es mi &lt;strong&gt;Perfil&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Este es mi &lt;strong&gt;Portafolio&lt;/strong&gt;&lt;/p&gt;</description>
       
     </item>
     

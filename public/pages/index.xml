@@ -13,18 +13,50 @@
       
       <guid>http://localhost:1313/pages/about/</guid>
       
-      <description>&lt;p&gt;About&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;rodrigo-silva&#34;&gt;Rodrigo Silva&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.shields.io/badge/Teach_Lead-SysAdmin-Blue?style=flat&amp;amp;labelColor=blue&amp;amp;color=gray&#34; alt=&#34;Static Badge&#34;&gt; &lt;img src=&#34;https://img.shields.io/badge/Cloud_AWS-Architect_Associate-Blue?style=flat&amp;amp;labelColor=blue&amp;amp;color=gray&#34; alt=&#34;Static Badge&#34;&gt; &lt;img src=&#34;https://img.shields.io/badge/Linux-gray?style=flat&amp;amp;labelColor=gray&amp;amp;color=gray&#34; alt=&#34;Static Badge&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;about&#34;&gt;About&lt;/h2&gt;
+&lt;p&gt;Electronic engineer dedicated to the technology field for more than 10 years, more than 5 specifically on Linux and around 2 years engaging DevOps roles.
+I’ve held positions like Tech Leader SysAdmin, server manager (Linux and Windows). Certified in AWS Cloud, ITIL4 and more.
+Raised with great values like responsibility, commitment and continuous improvement. Always in line of great communication and teamwork.&lt;/p&gt;
+&lt;h2 id=&#34;personal-information&#34;&gt;Personal Information&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Country&lt;/td&gt;
+          &lt;td&gt;Peru&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Number&lt;/td&gt;
+          &lt;td&gt;+51 979787257&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mail&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;mailto:rodrigo.silva.alegria@gmail.com&#34;&gt;rodrigo.silva.alegria@gmail.com&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;LinkedIn&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://www.linkedin.com/in/rodrigo-silva-alegria-4a002962/&#34;&gt;Rodrigo Silva&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</description>
       
     </item>
     
     <item>
-      <title>Profile</title>
-      <link>http://localhost:1313/pages/profile/</link>
+      <title>Portfolio</title>
+      <link>http://localhost:1313/pages/portfolio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/pages/profile/</guid>
+      <guid>http://localhost:1313/pages/portfolio/</guid>
       
-      <description>&lt;p&gt;Este es mi &lt;strong&gt;Perfil&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Este es mi &lt;strong&gt;Portafolio&lt;/strong&gt;&lt;/p&gt;</description>
       
     </item>
     
