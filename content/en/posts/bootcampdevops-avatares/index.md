@@ -81,3 +81,28 @@ Tan solo necesitamos ir a la URL:
 ![Avatares_Contenedores](Avatares_Contenedores.jpg)
 > **_Imagen 1_**:
 > Aplicación `Avatares` corriendo de forma local. En la parte superior se logra ver 2 contenedores (backend y frontend) corriendo.
+
+### 2. Github Actions: Push al container registry Docker Hub
+Para que este procedimiento presente una forma de integración continua (CI), añadí un `job` a modo de `workflow`.
+El cual puede encontrarse en `.github/workflows/pushDockerHub.yaml`
+
+Dicho `Github actions` seguirá una serie de pasos apenas se realice un `push a main`
+
+####Pasos
+##### 2.1 Push a main
+Luego de realizar los commits que se vean convenientes, podremos ejecutar:
+```bash
+$ git push origin main
+```
+Automáticamente empezarán a correr los `steps` en donde encontramos:
+- Autenticación co `Docker Hub`
+- Obtención de las variables de entorno necesarias
+- Y la construcción y envío de las imágenes
+
+![jobs](gigthubActitions_Jobs.PNG)
+> **_Imagen 2_**: Job y steps del workflow (Github Actions)
+
+![dockerHub](dockerHub.PNG)
+> **_Imagen 3_**: Podemos ver las imágenes ya subidas al Docker Hub
+
+
