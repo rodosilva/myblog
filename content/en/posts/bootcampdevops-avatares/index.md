@@ -118,12 +118,58 @@ Nos ubicaremos en el directorio `./terraform-EKS/`
 - `eks.tf`: Archivo encargado de la construcción del cluster de `EKS` que viene a ser un `Kubernetes` desde `AWS`
 
 #### Requisitos
-- **Terraform**: 
+- **Terraform**: Preferible v1.10.4
+- **aws-cli**: Preferible versión 2.23.1
 
 #### Pasos
-##### 3.1 Inicializando Terraform
-##### 3.2 Planificando los cambios en la infraestructura
-##### 3.3 Aplicando los cambios en la infraestructura
+
+##### 3.1 Configurando aws-cli y creando el rol EKS
+El primer paso es obtener las claves de acceso del `IAM User`
+También se pueden crear desde la consola de `AWS`
+
+Cuando ya las tengamos deberemos añadirlas desde nuestra consola:
+```bash
+$ aws configure
+AWS Access Key ID [****************]: 
+AWS Secret Access Key [****************]:
+Default region name [us-east-1]: 
+Default output format [None]:
+```
+
+También deberemos colocar el ARN:
+`arn:aws:iam::536697240563:role/avataresEksClusterRole` en el archivo `eks.tf`
+Ese rol se debe crear desde la consola en `IAM - Roles` y elegir la opción `EKS CLuster`[¹]
+
+[¹]: Para no incurrir en sobre costos, estoy usando un `Playground` de la plataforma de `KodeKloud`. Dicho sandbox se destruye luego de 3 horas y los permisos son limitados. Es por ellos de dicho `arn` ha sido temporal y a modo de ejemplo. Dado los permisos limitados, de aquí en adelante utilizaré un `EKS cluster` construido de forma manual siguiendo los alcances de `KodeKloud`
+
+##### 3.2 Inicializando Terraform
+Ahora toca inicializar el `Terraform`.
+Esto hará que se descarguen todos los archivos necesarios para el funcionamiento del proveedor que en este caso es `AWS`
+```bash
+$ terraform init
+```
+
+##### 3.3 Planificando los cambios en la infraestructura
+Luego de validar posibles errores de escritura o de indentación con
+```bash
+$ terraform validate
+```
+Podremos planificar los cambios que `Terraform` desea realizar
+```bash
+$ terraform plan
+```
+
+##### 3.4 Aplicando los cambios en la infraestructura
+Finalmente nos preparamos para aplicar los cambios con
+```bash
+$ terraform apply
+```
+No olvidemos de destruir la infraestructura una vez hayamos terminado para evitar cobros adicionales
+```bash
+$ terraform destroy
+```
 
 ### 4. Kubernetes Deployments: Despliegue de la aplicación
+
+
 
