@@ -140,7 +140,7 @@ También deberemos colocar el ARN:
 `arn:aws:iam::536697240563:role/avataresEksClusterRole` en el archivo `eks.tf`
 Ese rol se debe crear desde la consola en `IAM - Roles` y elegir la opción `EKS CLuster`[¹]
 
-[¹]: Para no incurrir en sobre costos, estoy usando un `Playground` de la plataforma de `KodeKloud`. Dicho sandbox se destruye luego de 3 horas y los permisos son limitados. Es por ellos de dicho `arn` ha sido temporal y a modo de ejemplo. Dado los permisos limitados, de aquí en adelante utilizaré un `EKS cluster` construido de forma manual siguiendo los alcances de `KodeKloud`
+[¹]: Para no incurrir en sobre costos, durante las pruebas usé un `Playground` de la plataforma de `KodeKloud`. Dicho sandbox se destruye luego de 3 horas y los permisos son limitados. Es por ellos de dicho `arn` ha sido temporal y a modo de ejemplo. Una vez que pasé la fase de pruebas, empecé a utilizar mi propia cuenta de `AWS` 
 
 ##### 3.2 Inicializando Terraform
 Ahora toca inicializar el `Terraform`.
@@ -170,6 +170,148 @@ $ terraform destroy
 ```
 
 ### 4. Kubernetes Deployments: Despliegue de la aplicación
+Ya tenemos el `EKS Cluster` corriendo.
+![eksCluster](./eksCluster.png)
+> **_Imagen 4_**: Estado del cluster visto desde la consola 
+
+Es momento de desplegar los manifiestos de `Kubernetes` para el correcto funcionamiento de la aplicación `Avatares` desde la nube de `AWS`
+
+Para ello deberemos empezar por explorar la carpeta `./eks`
+
+#### Descripción de archivos
+- **deploymentAvataresBack.yaml | deploymentAvataresFront.yaml**: Archivos encargados de desplegar tantos `pods` como se haya especificado. Los cuales contienen a los contenedores con los que hemos venido trabajando hasta el momento.
+
+- **serviceAvataresBack.yaml | serviceAvataresFront.yaml**: Estos archivos están encargados de brindar aspectos de red y conectividad con los `pods`. En el caso del `back` a modo de `clusterIP` y para el caso del `front` a modo de balanceador de carga.
+
+- **configMapAvataresBack.yaml | configMapAvataresFront.yaml**: Estos archivos presentan aspectos de configuración para los `pods`. En este caso he colocado las variables de entorno necesarias para el buen funcionamiento de la aplicación.
+
+- **k8sDeployment.sh**: Este archivo es un breve script encargado de desplegar todos los manifiestos para simplificar la ejecución.
+
+- ***aws-auth-cm.yaml**: [²]
+
+[²]: Este archivo está relacionado con los pasos específicos que tiene el `Playground` de `KodeKloud` para el despliegue del `Eks Cluster`. Dicho `configMap` se encarga de las configuraciones para unir los `worker nodes` con el cluster.
+Cuando empecé a utilizar mi propia cuenta de `aws` dicho archivo se dejó de utilizar
+
+#### Requisitos
+- **kubectl**: Preferible versión 1.31.5
+
+#### Pasos
+#### 4.1 Conectar nuestro kubectl al api de aws
+Para poder utilizar nuestros comandos `kubectl` de forma local. Deberemos establecer conexión con el cluster `EKS`.
+```bash
+$ aws eks update-kubeconfig --region us-east-1 --name avatares-cluster
+```
+
+#### 4.2 Ejecutar el script que corre los manifiestos de k8s
+Nos colocamos en:
+```bash
+$ cd eks/
+```
+Ejecutamos el script
+```bash
+$ ./k8sDeployment.sh
+===========================
+Despliegue de los ConfigMap
+===========================
+configmap/configmap-avatares-back created
+configmap/configmap-avatares-front created
+=============================
+Despliegue de los Deployments
+=============================
+deployment.apps/deployment-avatares-back created
+deployment.apps/deployment-avatares-front created
+===========================
+Despliegue de los Services
+===========================
+service/avatares-back created
+service/avatares-front created
+==============================================
+Mostrando URL del LoadBalancer para ver la APP
+==============================================
+La URL es: http://a2a70d6aa0cc54c6f80d784e5238dc85-204900509.us-east-1.elb.amazonaws.com:5173/
+```
+Con esto estaremos desplegando `deployments`, `configMaps` y `services` necesarios para el correcto funcionamiento de la aplicación `Avatares`
+
+#### 4.3 Visualizar la aplicación desde el endpoint del balanceador de carga
+Al final el mismo script entregará una URL muy parecida a esta:
+`http://a2a70d6aa0cc54c6f80d784e5238dc85-204900509.us-east-1.elb.amazonaws.com:5173/`
+
+Ahí podremos observar la aplicación en total funcionamiento:
+![avataresLoadBalancer](./avataresLoadBalancer.png)
+> **_Imagen 5_**: Aplicación Avatares vista desde URL externa
+
+### 5. Prometheus & Grafana: Monitorizando los Recursos de Kubernetes
+Ya tenemos a la aplicación de `Avatares` desplegada en `Kubernetes` y observable desde una URL externa.
+
+Es momento de monitorear. Para ello utilizaremos `Prometheus` para la obtención de métricas y `Grafana` para tener una interfaz de usuario más amigable.
+
+#### Requisitos
+- **Helm**: Preferible v3.16.3
+
+#### Pasos
+##### 5.1 Añadir el repositorio de prometheus-community
+Antes que nada, deberemos añadir de forma local el repositorio de `prometheus-community` y así tener los recursos necesarios para el despliegue que viene en el siguiente paso.
+```bash
+$ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+
+##### 5.2 Desplegar Prometheus y Grafana en nuestro cluster
+Ahora desplegamos los recursos necesarios para la correcta ejecución de `Prometheus` y `Grafana` en nuestro cluster
+```bash
+$ helm install prometheus-stack prometheus-community/kube-prometheus-stack --namespace=monitoring --create-namespace
+```
+
+**_Opcional_**:
+Si quisiéramos tener el template de forma local podríamos usar el siguiente comando:
+```bash
+$ helm template prometheus-stack prometheus-community/kube-prometheus-stack --namespace=monitoring --create-namespace > prometheus-stack.yaml
+```
+
+##### 5.3 Editar el servicio de Grafana para poder entrar de forma externa
+Este paquete de la comunidad por defecto no genera una URL externa para que podamos ingresar a `Grafana`
+
+Para ello deberemos editar el servicio
+```bash
+$ kubectl edit service -n monitoring prometheus-stack-grafana
+```
+Dado que para este laboratorio no estamos usando certificado, también cambiaremos el puerto `80` por por ejemplo el `5270`
+```
+[...]
+  ports:
+      port: 5270
+      targetPort: 5270
+  type: LoadBalancer
+[...]
+```
+
+##### 5.4 Ingresando a Grafana
+Finalmente ya podemos ingresar a `Grafana`.
+Para ello revisaremos la URL se muestra desde el servicio:
+```bash
+kubectl get services -n monitoring
+```
+
+E ingresaremos a una URL my parecida a esta:
+`http://:5270`
+
+Dado que hemos usado los valores por defecto del paquete de `prometheus-community/kube-prometheus-stack`, las credenciales para ingresar son:
+```
+Usuario: admin
+Password: prom-operator
+```
+
+**_Opcional:_**
+Si quisiéramos obtener dichos valores por defecto, podemos revisar el archivo de la siguiente forma:
+```bash
+$ helm show values prometheus-community/kube-prometheus-stack > prometheus-default-values.yaml
+```
+
+Hemos llegado al final, `Grafana` cuenta con sus plantillas. En nuestro caso utilizaremos la de `Kubernetes - Pods` con lo que podemos ver las métricas en forma gráfica:
+![grafana_back](./grafana_AvataresBack.png)
+> **_Imagen 6_**: UI Grafana revisando el Pod de Avatares-back
+
+![grafana_front](./grafana_AvataresFront.png)
+> **_Imagen 7_**: UI Grafana revisando el Pod de Avatares-front
 
 
 
