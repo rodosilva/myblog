@@ -38,7 +38,7 @@ La fase termina en cuanto se muestra el correcto funcionamiento de la aplicació
 
 ### 1. Docker Compose: Despliegue local de la aplicación
 
-En este directorio `backFront` se encuentra el único script que necesitamos ejecutar para poder correr la aplicación de `Avatares` de forma local dentro de contenedores (Usando `Docker Compose`).
+En este directorio `./backFront/` se encuentra el único script que necesitamos ejecutar para poder correr la aplicación de `Avatares` de forma local dentro de contenedores (Usando `Docker Compose`).
 
 El script `runCompose.sh` realizará los pasos necesarios para poner en marcha la aplicación.
 
@@ -75,8 +75,7 @@ Este script realiza básicamente 3 pasos. El primero tiene que ver con las varia
 ##### 1.3 Disfrutar de la Aplicación
 Desde el `localhost` ya nos será posible de visualizar la aplicación.
 Tan solo necesitamos ir a la URL:
-
-[Avatares](http://localhost:5173)
+[Avatares localhost](http://localhost:5173)
 
 ![Avatares_Contenedores](Avatares_Contenedores.jpg)
 > **_Imagen 1_**:
