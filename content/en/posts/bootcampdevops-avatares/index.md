@@ -15,7 +15,7 @@ el entorno laboral
 ## Información del Proyecto
 - **Integrante**: Rodrigo Silva Alegría
 - **Repositorio**: https://github.com/rodosilva/bootCampDevOps-ProyectoFinal-Avatares
-- **Video Presentación**: 
+- **Video Presentación**: https://youtu.be/K8x0AuKe_G8?si=2_lelJRPRRDKBUcB
 > **_NOTA_**
 > *Este proyecto utiliza como base la aplicación de `Rossana Suarez` la cual podremos encontrar en [gitlab](https://gitlab.com/training-devops-cf/avatares-devops)*
 
@@ -239,8 +239,10 @@ Al final el mismo script entregará una URL muy parecida a esta:
 `http://a2a70d6aa0cc54c6f80d784e5238dc85-204900509.us-east-1.elb.amazonaws.com:5173/`
 
 Ahí podremos observar la aplicación en total funcionamiento:
-![avataresLoadBalancer](./avataresLoadBalancer.png)
+![avataresLoadBalancer](./avataresLoadBalancer.png) [³]
 > **_Imagen 6_**: Aplicación Avatares vista desde URL externa
+
+[³]: Por alguna razón al momento de grabar el video, tuve que realizar un cambio al archivo `vite.config.js`. Algo que no había sido necesario durante las pruebas anteriores. Tuve que añadir el endpoint del load balancer a dicho archivo de esta forma: `allowedHosts: ["a6b0cefb684f248388f815255406f89f-43795873.us-east-1.elb.amazonaws.com"],`
 
 ### 5. Prometheus & Grafana: Monitorizando los Recursos de Kubernetes
 Ya tenemos a la aplicación de `Avatares` desplegada en `Kubernetes` y observable desde una URL externa.
@@ -280,8 +282,14 @@ Dado que para este laboratorio no estamos usando certificado, también cambiarem
 ```
 [...]
   ports:
-      port: 5270
-      targetPort: 5270
+  - name: http-web
+    port: 5270
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app.kubernetes.io/instance: prometheus-stack
+    app.kubernetes.io/name: grafana
+  sessionAffinity: None
   type: LoadBalancer
 [...]
 ```
