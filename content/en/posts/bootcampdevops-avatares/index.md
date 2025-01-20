@@ -232,13 +232,16 @@ La URL es: http://a2a70d6aa0cc54c6f80d784e5238dc85-204900509.us-east-1.elb.amazo
 ```
 Con esto estaremos desplegando `deployments`, `configMaps` y `services` necesarios para el correcto funcionamiento de la aplicación `Avatares`
 
+![diagrama](./k8sDiagrama.jpg)
+> **_Imagen 5_**: Diagrama simplificado de los recursos k8s
+
 #### 4.3 Visualizar la aplicación desde el endpoint del balanceador de carga
 Al final el mismo script entregará una URL muy parecida a esta:
 `http://a2a70d6aa0cc54c6f80d784e5238dc85-204900509.us-east-1.elb.amazonaws.com:5173/`
 
 Ahí podremos observar la aplicación en total funcionamiento:
 ![avataresLoadBalancer](./avataresLoadBalancer.png)
-> **_Imagen 5_**: Aplicación Avatares vista desde URL externa
+> **_Imagen 6_**: Aplicación Avatares vista desde URL externa
 
 ### 5. Prometheus & Grafana: Monitorizando los Recursos de Kubernetes
 Ya tenemos a la aplicación de `Avatares` desplegada en `Kubernetes` y observable desde una URL externa.
@@ -308,10 +311,16 @@ $ helm show values prometheus-community/kube-prometheus-stack > prometheus-defau
 
 Hemos llegado al final, `Grafana` cuenta con sus plantillas. En nuestro caso utilizaremos la de `Kubernetes - Pods` con lo que podemos ver las métricas en forma gráfica:
 ![grafana_back](./grafana_AvataresBack.png)
-> **_Imagen 6_**: UI Grafana revisando el Pod de Avatares-back
+> **_Imagen 7_**: UI Grafana revisando el Pod de Avatares-back
 
 ![grafana_front](./grafana_AvataresFront.png)
-> **_Imagen 7_**: UI Grafana revisando el Pod de Avatares-front
+> **_Imagen 8_**: UI Grafana revisando el Pod de Avatares-front
 
+## Palabras Finales
+Este proyecto es un vistazo breve del ciclo de vida de una aplicación.
+Desde su despliegue de forma local, hasta llegar a su habitad en la nube.
+
+Siempre existirán opciones de mejora, y este proyecto no es la excepción.
+La idea es mantener este proyecto vivo e ir mejorándose y automatizándose. 
 
 
