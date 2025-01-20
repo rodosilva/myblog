@@ -20,7 +20,7 @@ el entorno laboral
 > *Este proyecto utiliza como base la aplicación de `Rossana Suarez` la cual podremos encontrar en [gitlab](https://gitlab.com/training-devops-cf/avatares-devops)*
 
 ## Descripción
-Este proyecto podría definirse en 4 fases.
+Este proyecto podría definirse en 5 fases.
 
 **La primera fase** se basa en la construcción y ejecución de 2 contenedores. Uno de ellos con el backend (API) y el otro con el frontend (WEB). Todo orquestado con `Docker Compose`
 
