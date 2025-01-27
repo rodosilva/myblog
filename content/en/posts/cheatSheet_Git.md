@@ -1,6 +1,6 @@
 +++
 date = '2024-12-24T11:53:30-05:00'
-title = 'CheatSheet_Git'
+title = 'CheatSheet Git'
 +++
 
 ## Comandos
