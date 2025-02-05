@@ -39,7 +39,7 @@ zanahoria anaranjado
 ```
 He utilizado el `-E` para poder añadir un `regex Extended` y así sustituir (`s/`) los números del `0 al 9` (Uno o más `+`) por un carácter vacío `''`. Con el `/g` le digo que abarque todo el archivo de texto `abc.txt`.
 
-### - Comando: aws
+### - Comando: awk
 **Escaneo y procesamiento de texto**
 Voy a utilizar el mismo archivo `abc.txt` para así extraer la palabra o palabras basándome en filas y columnas.
 
