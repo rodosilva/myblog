@@ -39,7 +39,7 @@ zanahoria anaranjado
 ```
 He utilizado el `-E` para poder añadir un `regex Extended` y así sustituir (`s/`) los números del `0 al 9` (Uno o más `+`) por un carácter vacío `''`. Con el `/g` le digo que abarque todo el archivo de texto `abc.txt`.
 
-## - Comando: aws
+### - Comando: aws
 **Escaneo y procesamiento de texto**
 Voy a utilizar el mismo archivo `abc.txt` para así extraer la palabra o palabras basándome en filas y columnas.
 
@@ -63,7 +63,7 @@ plátano amarillo
 Con el `FNR` le digo que quiero dirigirme a la tercera `3` fila y deseo imprimir la columna `1` y `2`.
 Nótese que luego de la `,` hay un espacio, es por eso que se respeta el espacio en blanco entre la palabra de la columna `1` y la de la columna `2`.
 
-## Comando: perl
+### - Comando: perl
 **Escanear y extraer información**
 
 Algo sumamente útil que se puede realizar con el comando `perl` es extraer un octeto de una dirección `IPv4`.
