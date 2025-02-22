@@ -25,9 +25,10 @@ title = 'CheatSheet Git'
 - `git checkout .` → Descartar cambios del área de trabajo
 - `git checkout [--ours | --theirs] [file en conflicto]` → Ours cuando queremos que se conserve que hay en la rama padre, y theirs, la rama hija
 - `git checkout [file name]` → Quita los cambios del área de trabajo ejecutadas en ese archivo y lo retorna al último Stage de ese mismo archivo
-- `git cherry-pick [hash commit]` → Toma commits y los coloca en mi rama añadiendolo como un nuevo commit.
+- `git checkout -b <branch-name> <forked/forked-name>` -> Crea la rama con el nombre desde la ruta forked. 
+- `git cherry-pick [hash commit]` → Toma commits y los coloca en mi rama añadiéndolo como un nuevo commit.
 - `git clone [URL]` → Clonar un remoto hacia tu local
-- `git commit --amend` → Permite editar el mensaje del último commit. Tambien añade los cambios que están en tu área de staging (Lo que añadiste con el git add [file])
+- `git commit --amend` → Permite editar el mensaje del último commit. También añade los cambios que están en tu área de staging (Lo que añadiste con el git add [file])
 - `git commit -m "Mensaje"` → De área de Staging al área del historial de repositorio
 - `git config --global user.email "rodosilva.alpha@gmail.com"` → in el global si quieres usar credenciales en repositorio específico
 - `git config --global user.email "rodosilva.alpha@gmail.com"` 
@@ -39,6 +40,7 @@ title = 'CheatSheet Git'
 - `git config user.name` → Ver configuración solo de User
 - `git config user.name "Rodrigo Silva"` → Sin el global si quieres usar credenciales en repositorio específico
 - `git diff` → Diferencias entre nuestra área de trabajo y área de repositorio. Desde el punto de vista del área de trabajo
+- `git fetch forked`-> Carga los remotos a tus ramas. Se suele usar luego de un `git remote add forked`
 - `git init` → Carpeta en la que estamos será un repositorio
 - `git log` → Ver el historial junto con la información
 - `git log --format=[short|medium|full]` → Cantidad de info en los logs
@@ -51,6 +53,7 @@ title = 'CheatSheet Git'
 - `git rebase --interactive` → Permite interactuar con el proceso de rebase. Limpieza de tu historia
 - `git rebase main` → Desde una rama secundaria, actualiza y añade los commits de la rama main a nuestra rama secundaria 
 - `git remote add origin [URL]` → Añadir la url del Github y tu repo
+- `git remote add forked <URL of Forked Repo>`-> Añadir la url de un fork a tus remotos
 - `git reset` → Devuelve cambios en archivos a la zona de trabajo
 - `git reset --hard [HEAD~1 commit ID]` → Elimina y son no recuperables
 - `git reset --mixed [HEAD~1 commit ID]` → Es la de default. Deshace el commit, mantiene los cambios en el área de trabajo
