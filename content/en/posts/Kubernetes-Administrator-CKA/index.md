@@ -106,3 +106,53 @@ metadata:
          nodePort: 30008
 ```
 Soporte en: AWS, Azure, GoogleCloud
+
+## ConfigMap
+### Imperativo
+`kubectl create configmap app-config --from-literal=APP_COLOR=blue --from-literal=APP_MOD=prod`
+`kubectl create configmap <config-name> --from-file=<path-to-file>`
+
+### Declarativo
+```bash
+# config-map.yaml
+
+apiVersion: v1
+kind: ConfigMap 
+metadata:
+    name: app-config # <<<<<<<<<<<--- HERE
+data:
+    APP_COLOR: blue
+    APP_MODE: prod 
+```
+
+####Inject into a POD
+```bash
+# pod-definition.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+    name: simple-webapp-color
+    labels:
+        name: simple-webapp-color
+spec:
+    containers:
+        - name: simple-webapp-color
+          image: simple-webapp-color
+          ports:
+              - containerPort: 8080
+          envFrom:
+              - configMapRef:
+                  name: app-config # <<<<<--- HERE
+```
+
+## Troubleshooting
+`Kubectl get nodes` Estado de los Nodos
+`kubectl get pods`  Estado de los PODs
+`kubectl get pods -n kube-system`  Estado de los PODs del ControlPlane
+`service kube-apiserver status` Estado de los servicios del ControlPlane
+`service kube-controller-manager status` Estado de los servicios del ControlPlane
+`service kube-scheduler status` Estado de los servicios del ControlPlane
+`service kubelet status` Estado de los servicios del ControlPlane en el Nodo
+`service kube-proxy status` Estado de los servicios del ControlPlane en el Nodo
+`kubectl logs kube-apiserver-master -n kube-system` Revisar Logs del servicio
+`sudo journalctl -u kube-apiserver` Revisar Logs del servicio
