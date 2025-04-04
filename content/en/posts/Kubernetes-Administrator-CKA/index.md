@@ -109,8 +109,8 @@ Soporte en: AWS, Azure, GoogleCloud
 
 ## ConfigMap
 ### Imperativo
-`kubectl create configmap app-config --from-literal=APP_COLOR=blue --from-literal=APP_MOD=prod`
-`kubectl create configmap <config-name> --from-file=<path-to-file>`
+- `kubectl create configmap app-config --from-literal=APP_COLOR=blue --from-literal=APP_MOD=prod`
+- `kubectl create configmap <config-name> --from-file=<path-to-file>`
 
 ### Declarativo
 ```bash
@@ -244,6 +244,7 @@ Podremos ver un cuadro como este:
 | Ready           | True/False | Saludable                                 | Última comunicación |
 | N/A             | Unknown    | Cuando no logra comunicarse con el Master | Última comunicación |
 ### Rutas del Kubelet
-Aquí encontraremos algunas rutas importantes a recordar que el `kubelet` utiliza
+Aquí encontraremos algunas rutas importantes a recordar que el `kubelet` utiliza:
+
 - `/var/lib/kubelet/config.yaml` Ruta local de un `nodo` donde guarda la configuración del `kubelet service`. Dicho servicio toma las opciones de este archivo.
 - `/etc/kubernetes/kubelet.conf` Archivo local de configuración de un `nodo`  usado por `kubelet` para conectarse con el `api server`
