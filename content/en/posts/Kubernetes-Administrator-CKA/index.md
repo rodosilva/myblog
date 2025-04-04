@@ -243,3 +243,7 @@ Podremos ver un cuadro como este:
 | PIDPresure      | True/False | Muchos procesos corriendo                 | Última comunicación |
 | Ready           | True/False | Saludable                                 | Última comunicación |
 | N/A             | Unknown    | Cuando no logra comunicarse con el Master | Última comunicación |
+### Rutas del Kubelet
+Aquí encontraremos algunas rutas importantes a recordar que el `kubelet` utiliza
+- `/var/lib/kubelet/config.yaml` Ruta local de un `nodo` donde guarda la configuración del `kubelet service`. Dicho servicio toma las opciones de este archivo.
+- `/etc/kubernetes/kubelet.conf` Archivo local de configuración de un `nodo`  usado por `kubelet` para conectarse con el `api server`
