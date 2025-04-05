@@ -80,3 +80,37 @@ Con el `p` le digo que haga un loop pero con un formato parecido al de `sed` y c
 
 Una vez generado el patron en un formato `regex` le digo que extraiga el cuarto `4` basándose en ese mismo patrón.
 
+## 3. CONDICIONALES
+### 3.1 Forma Básica
+```bash
+if [[ -z $string ]]; then
+  echo "String is empty"
+elseif [[ -n $string ]]; then
+  echo "String is not empty"
+else
+  echo "This never happens"
+fi
+```
+
+### 3.2 Cuadro de Flags
+| Condición               | Descripción           |
+| ----------------------- | --------------------- |
+| `[[ -z STRING ]]`       | String vacío          |
+| `[[ -n STRING ]]`       | String no vacío       |
+| `[[ -e FILE ]]`         | Archivo existe        |
+| `[[ -r FILE ]]`         | Archivo de lectura    |
+| `[[ -h FILE ]]`         | Es un Symlink         |
+| `[[ -d FILE ]]`         | Directorio            |
+| `[[ -w FILE ]]`         | Archivo de escritura  |
+| `[[ -f FILE ]]`         | Es un archivo regular |
+| `[[ -x FILE ]]`         | Es ejecutable         |
+| `[[ STRING == STRING]]` | Igual                 |
+| `[[ STRING != STRING]]` | No igual              |
+| `[[ NUM -eq NUM ]]`     | Igual                 |
+| `[[ NUM -ne NUM ]]`     | No igual              |
+| `[[ NUM -lt NUM ]]`     | Menor que             |
+| `[[ NUM -le NUM ]]`     | Menor o igual         |
+| `[[ NUM -gt NUM ]]`     | Mayor que             |
+| `[[ NUM -ge NUM ]]`     | Mayor o igual         |
+| `[[ STRING =~ STRING]]` | Regexp                |
+| `(( NUM < NUM ))`       | Condición numérica    |
